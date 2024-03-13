@@ -1,1 +1,1 @@
-Here I have to dysplay my first code with C#
+Here I have to display my first code in C#
