@@ -1,2 +1,23 @@
 Here I have to display my first code in C#
 I am planning to do that tomorrow
+
+namespace WinFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jas sum Pavle Risteski i ovaa e mojata prva programa vo C#");
+        }
+    }
+}
