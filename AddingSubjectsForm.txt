@@ -1,0 +1,57 @@
+This application is written in C#.
+
+namespace WinFormsApp1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Predmet.Text.Length > 0)
+            {
+                foreach (var item in VPredmeti.Items)
+                {
+                    if (item.ToString().Equals(Predmet.Text))
+                    {
+                        return;
+                    }
+                }
+                VPredmeti.Items.Add(Predmet.Text);
+                Predmet.Text = "";
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (var item in VPredmeti.SelectedItems)
+            {
+                IPredmeti.Items.Add(item);
+            }
+            while (VPredmeti.SelectedItems.Count > 0)
+            {
+                VPredmeti.Items.Remove(VPredmeti.SelectedItems[0]);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            foreach (var item in IPredmeti.SelectedItems)
+            {
+                VPredmeti.Items.Add(item);
+            }
+            while (IPredmeti.SelectedItems.Count > 0)
+            {
+                IPredmeti.Items.Remove(IPredmeti.SelectedItems[0]);
+            }
+        }
+    }
+}
